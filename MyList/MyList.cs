@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace MyList;
 
 public class MyList<T> : IEnumerable<T>
 {
-  private Node<T>? firstNode;
+  private MyListNode<T>? firstNode;
 
   public MyList()
   {
@@ -15,7 +13,7 @@ public class MyList<T> : IEnumerable<T>
 
   public void Add(T value)
   {
-    Node<T> newNode = new Node<T>(value);
+    MyListNode<T> newNode = new MyListNode<T>(value);
 
     if (firstNode is null)
     {
@@ -23,7 +21,7 @@ public class MyList<T> : IEnumerable<T>
       return;
     }
 
-    Node<T> current = firstNode;
+    MyListNode<T> current = firstNode;
     while (current.NextNode != null)
     {
       current = current.NextNode;
@@ -42,7 +40,7 @@ public class MyList<T> : IEnumerable<T>
       return;
     }
 
-    Node<T> currentNode = firstNode;
+    MyListNode<T> currentNode = firstNode;
     while (currentNode.NextNode != null && !currentNode.NextNode.Value!.Equals(value))
     {
       currentNode = currentNode.NextNode;
@@ -67,7 +65,7 @@ public class MyList<T> : IEnumerable<T>
 
   public IEnumerator<T> GetEnumerator()
   {
-    Node<T>? currentNode = firstNode;
+    MyListNode<T>? currentNode = firstNode;
     while (currentNode != null)
     {
       yield return currentNode.Value;

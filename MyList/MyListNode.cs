@@ -1,13 +1,11 @@
-using System;
-
 namespace MyList;
 
-public class Node<T>
+public class MyListNode<T>
 {
   public T Value { get; set; }
-  public Node<T>? NextNode { get; set; }
+  public MyListNode<T>? NextNode { get; set; }
 
-  public Node(T value)
+  public MyListNode(T value)
   {
     Value = value;
     NextNode = null;
