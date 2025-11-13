@@ -56,7 +56,7 @@ static class Dijkstra
   public static void EZPrint(Graph graph, string srcName)
   {
     var (weights, routes) = Solve(graph, srcName);
-    string title = "Dijkstra";
+    string title = "Dijkstra + Coloring";
     string description = $"Shortest routes from node {srcName} to each node:";
     Utils.GraphPrint(title, description, weights, routes);
   }
