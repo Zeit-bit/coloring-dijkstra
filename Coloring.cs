@@ -1,3 +1,5 @@
+using MyList;
+
 static class Coloring
 {
   public static int[] GetColored(Graph graph)
@@ -14,7 +16,7 @@ static class Coloring
     int vertexCount,
     int[] colors,
     int latestColor,
-    List<Tuple<Node, double>>[] adjMatrix
+    MyList<Tuple<Node, double>>[] adjMatrix
   )
   {
     if (currentVertex == vertexCount)

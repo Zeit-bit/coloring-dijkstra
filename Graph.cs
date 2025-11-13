@@ -1,3 +1,5 @@
+using MyList;
+
 class Graph
 {
   public Dictionary<string, Node> Nodes { get; private init; } = [];
@@ -5,9 +7,9 @@ class Graph
   {
     get { return Nodes.Count; }
   }
-  public List<Edge> Edges { get; private init; } = [];
+  public MyList<Edge> Edges { get; private init; } = [];
 
-  public Graph(List<Tuple<string, string, double>> edges)
+  public Graph(MyList<Tuple<string, string, double>> edges)
   {
     foreach (var e in edges)
     {
@@ -27,11 +29,11 @@ class Graph
     return Nodes[nodeName];
   }
 
-  public List<Tuple<Node, double>>[] GetAdjMatrix()
+  public MyList<Tuple<Node, double>>[] GetAdjMatrix()
   {
-    var adjMatrix = new List<Tuple<Node, double>>[Vertices];
+    var adjMatrix = new MyList<Tuple<Node, double>>[Vertices];
     for (int i = 0; i < adjMatrix.Length; i++)
-      adjMatrix[i] = new List<Tuple<Node, double>>();
+      adjMatrix[i] = new MyList<Tuple<Node, double>>();
     foreach (var edge in Edges)
     {
       adjMatrix[edge.Src.Id].Add(new(edge.Dst, edge.Weight));

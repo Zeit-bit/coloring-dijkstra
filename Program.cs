@@ -1,9 +1,11 @@
-﻿class Program
+﻿using MyList;
+
+class Program
 {
   public static void Main()
   {
     // Edges of the map
-    var edges = new List<Tuple<string, string, double>>()
+    var edges = new MyList<Tuple<string, string, double>>()
     {
       new("UA", "TH", 1.05),
       new("TH", "CC", 2.85),
